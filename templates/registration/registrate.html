@@ -34,7 +34,7 @@
   </head>
   <body>
     <header id="navbar">
-        <img class="logo" src="/static/images/logo.png" alt="" />
+       <a href="{% url 'main:index' %}"><img class="logo" src="/static/images/logo.png" alt="" /></a> 
         <div class="btn-hamburger" id="burger">
           <div id="drop-men" class="dropdown">
             <a data-toggle="dropdown"><i class="fas fa-bars"></i></a>
@@ -118,15 +118,15 @@
       </div>
       <h1 class="white-text">Найдено (0)</h1>
     </div>
-    <form action="register" method="POST">
-      {% csrf_token %}
+<form method="POST">
+    {% csrf_token %}
     <div class="re-section">
       <h1 class="re-text">Регистрация</h1>
       <p class="re-para">Ваш аккаунт позволит добавлять товары в избранное</p>
       <div class="re-inputs">
-        <input class="re-input" name="Name" type="text" placeholder="Ваше имя" />
-        <input class="re-input" type="email" name="Email" placeholder="E-mail" />
-        <input class="re-input" type="password" name="Password" placeholder="Пароль" />
+        <input class="re-input" name="first_name" type="text" placeholder="Ваше имя" />
+        <input class="re-input" type="email" name="email" placeholder="E-mail" />
+        <input class="re-input" type="password" name="password" placeholder="Пароль" />
       </div>
       <div class="check">
         <input class="re-check" type="checkbox" id="scales" name="scales" />

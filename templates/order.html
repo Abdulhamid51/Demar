@@ -24,7 +24,7 @@
   </head>
   <body>
      <header id="navbar">
-        <img class="logo" src="/static/images/logo.png" alt="" />
+        <a href="{% url 'main:index' %}"><img class="logo" src="/static/images/logo.png" alt="" /></a> 
         <div class="btn-hamburger" id="burger">
           <div id="drop-men" class="dropdown">
             <a data-toggle="dropdown"><i class="fas fa-bars"></i></a>
@@ -87,9 +87,6 @@
           </li>
         </div>
         <div class="navbar-end">
-          <a href="{% url 'accounts:register' %}"
-            ><img class="user" src="/static/images/user.png" alt=""
-          /></a>
           <a href="cart.html"
             ><img class="cart" src="/static/images/cart.png" alt=""
           /></a>

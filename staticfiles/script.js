@@ -1,7 +1,7 @@
 $('button.stone-btn').on('click', function(){
-    $button = $(this)
-    $product_id = $(this).data('id')
-    $mkv = $(this).data('mkv')
+    var $button = $(this)
+    var $product_id = $(this).data('id')
+    var $mkv = $(this).data('mkv')
     $.ajax({
         url:'/cart-create/',
         type:'GET',
@@ -17,8 +17,39 @@ $('button.stone-btn').on('click', function(){
     })
 })
 
+$('input.mkv').on('keyup',function(){
+    var $all_price = $('b.all')
+    var $price = $(this).next().next().children()
+    var $mkv = $(this)
+    $.ajax({
+        url:'/cart-update/',
+        type:'GET',
+        data:{
+            'mkv':$mkv.val(),
+            'cart_id':$mkv.data('id')
+        },
+        success:function(response){
+            $price.html(response['price'])
+            $all_price.html(response['main_price'])
+        }
+    })
+})
 
-
+$('button.delete').on('click',function(){
+    $(this).parent().parent().parent().hide()
+    var $all_price = $('b.all')
+    var $cart = $(this).data('id')
+    $.ajax({
+        url:'/cart-delete/',
+        type:'GET',
+        data:{
+            'cart_id':$cart
+        },
+        success:function(response){
+            $all_price.html(response['main_price'])
+        }
+    })
+})
 
 const burger = document.getElementById('burger')
 const menu = document.getElementById('ul')

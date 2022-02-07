@@ -25,6 +25,8 @@ class Contact(models.Model):
 
 	def __str__(self):
 		return f"{self.name}"
+
+
 class Category(models.Model):
     name = models.CharField('Nomi',max_length=150,)
     slug = models.SlugField('*',max_length=150, unique=True)
@@ -75,4 +77,12 @@ class MainCart(models.Model):
     def __str__(self):
         return str(self.carts.all().count())
 
-# print(request.session)
+
+class Order(models.Model):
+    first_name = models.CharField("Ismi", max_length=50)
+    last_name = models.CharField("familiyasi", max_length=50)
+    phone = models.PositiveIntegerField("phone")
+    cart = models.ForeignKey(MainCart, verbose_name="carts", on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.first_name}, {self.last_name}"

@@ -26,7 +26,7 @@
   </head>
   <body>
     <header id="navbar">
-        <img class="logo" src="/static/images/logo.png" alt="" />
+<a href="{% url 'main:index' %}"><img class="logo" src="/static/images/logo.png" alt="" /></a> 
         <div class="btn-hamburger" id="burger">
           <div id="drop-men" class="dropdown">
             <a data-toggle="dropdown"><i class="fas fa-bars"></i></a>
@@ -242,15 +242,16 @@
         </div>
         <div class="catalog">
           <div class="stones">
+            {% for pro in products %}
             <div class="stone">
               <div>
                 <span class="sale">-20%</span>
-                <img class="stone-img" src="/static/images/laminat1.png" alt="" />
+                <img class="stone-img" src="{{po.image.url}}" alt="" />
               </div>
               <div class="stone-div">
-                <span class="stone-price">150.000</span
+                <span class="stone-price">{{pro.price}}</span
                 ><span class="stone-sum">сум/m²</span>
-                <span class="stone-old">200.000</span
+                <span class="stone-old">{{pro.old_price}}</span
                 ><span class="stone-sums">сум/m²</span>
               </div>
               <div class="stone-di">
@@ -267,131 +268,7 @@
                 <img class="fav" src="/static/images/favorite.png" alt="" />
               </div>
             </div>
-            <div class="stone">
-              <div>
-                <span class="sale">-20%</span>
-                <img class="stone-img" src="/static/images/laminat2.png" alt="" />
-              </div>
-              <div class="stone-div">
-                <span class="stone-price">150.000</span
-                ><span class="stone-sum">сум/m²</span>
-                <span class="stone-old">200.000</span
-                ><span class="stone-sums">сум/m²</span>
-              </div>
-              <div class="stone-di">
-                <h4 class="stone-text">Boost Pro 3D Urban</h4>
-                <h4 class="stone-title">Ergon (Италия)</h4>
-              </div>
-              <p class="stone-para">
-                Плитка Laparet Calacatta Oro 60x120, золотая, полированная
-              </p>
-              <div class="stone-d">
-                <button type="button" class="stone-btn">
-                  <img src="/static/images/shopping.png" alt="" />
-                </button>
-                <img class="fav" src="/static/images/favorite.png" alt="" />
-              </div>
-            </div>
-            <div class="stone">
-              <div>
-                <span class="sale">-20%</span>
-                <img class="stone-img" src="/static/images/laminat3.png" alt="" />
-              </div>
-              <div class="stone-div">
-                <span class="stone-price">150.000</span
-                ><span class="stone-sum">сум/m²</span>
-                <span class="stone-old">200.000</span
-                ><span class="stone-sums">сум/m²</span>
-              </div>
-              <div class="stone-di">
-                <h4 class="stone-text">Boost Pro 3D Urban</h4>
-                <h4 class="stone-title">Ergon (Италия)</h4>
-              </div>
-              <p class="stone-para">
-                Плитка Laparet Calacatta Oro 60x120, золотая, полированная
-              </p>
-              <div class="stone-d">
-                <button type="button" class="stone-btn">
-                  <img src="/static/images/shopping.png" alt="" />
-                </button>
-                <img class="fav" src="/static/images/favorite.png" alt="" />
-              </div>
-            </div>
-            <div class="stone">
-              <div>
-                <span class="sale">-20%</span>
-                <img class="stone-img" src="/static/images/laminat4.png" alt="" />
-              </div>
-              <div class="stone-div">
-                <span class="stone-price">150.000</span
-                ><span class="stone-sum">сум/m²</span>
-                <span class="stone-old">200.000</span
-                ><span class="stone-sums">сум/m²</span>
-              </div>
-              <div class="stone-di">
-                <h4 class="stone-text">Boost Pro 3D Urban</h4>
-                <h4 class="stone-title">Ergon (Италия)</h4>
-              </div>
-              <p class="stone-para">
-                Плитка Laparet Calacatta Oro 60x120, золотая, полированная
-              </p>
-              <div class="stone-d">
-                <button type="button" class="stone-btn">
-                  <img src="/static/images/shopping.png" alt="" />
-                </button>
-                <img class="fav" src="/static/images/favorite.png" alt="" />
-              </div>
-            </div>
-            <div class="stone">
-              <div>
-                <span class="sale">-20%</span>
-                <img class="stone-img" src="/static/images/laminat1.png" alt="" />
-              </div>
-              <div class="stone-div">
-                <span class="stone-price">150.000</span
-                ><span class="stone-sum">сум/m²</span>
-                <span class="stone-old">200.000</span
-                ><span class="stone-sums">сум/m²</span>
-              </div>
-              <div class="stone-di">
-                <h4 class="stone-text">Boost Pro 3D Urban</h4>
-                <h4 class="stone-title">Ergon (Италия)</h4>
-              </div>
-              <p class="stone-para">
-                Плитка Laparet Calacatta Oro 60x120, золотая, полированная
-              </p>
-              <div class="stone-d">
-                <button type="button" class="stone-btn">
-                  <img src="/static/images/shopping.png" alt="" />
-                </button>
-                <img class="fav" src="/static//images/favorite.png" alt="" />
-              </div>
-            </div>
-            <div class="stone">
-              <div>
-                <span class="sale">-20%</span>
-                <img class="stone-img" src="/static/images/laminat2.png" alt="" />
-              </div>
-              <div class="stone-div">
-                <span class="stone-price">150.000</span
-                ><span class="stone-sum">сум/m²</span>
-                <span class="stone-old">200.000</span
-                ><span class="stone-sums">сум/m²</span>
-              </div>
-              <div class="stone-di">
-                <h4 class="stone-text">Boost Pro 3D Urban</h4>
-                <h4 class="stone-title">Ergon (Италия)</h4>
-              </div>
-              <p class="stone-para">
-                Плитка Laparet Calacatta Oro 60x120, золотая, полированная
-              </p>
-              <div class="stone-d">
-                <button type="button" class="stone-btn">
-                  <img src="/static/images/shopping.png" alt="" />
-                </button>
-                <img class="fav" src="/static/images/favorite.png" alt="" />
-              </div>
-            </div>
+           {% endfor %}
           </div>
           <div
             style="margin-left: auto; margin-right: auto; text-align: center"
