@@ -119,77 +119,59 @@
       </h1>
       <div class="orders">
         <div class="order">
-          <h1 class="order-left-text">Личные данные</h1>
-          <div class="field">
+
+
+
+
+
+          
+          <form action="/order/">
+
+            <h1 class="order-left-text">Личные данные</h1>
+            <div class="field">
             <label class="order-label" for="name">Имя</label>
             <input
-              class="order-input"
-              type="text"
-              id="name"
-              placeholder="Сергей"
+            name="name"
+            class="order-input"
+            type="text"
+            id="name"
+            placeholder="Сергей"
             />
           </div>
           <div class="field">
             <label class="order-label" for="surname">Фамилия</label>
             <input
-              class="order-input"
-              type="text"
-              id="surname"
-              placeholder="Сергей"
+            name="surname"
+            class="order-input"
+            type="text"
+            id="surname"
+            placeholder="Сергей"
             />
           </div>
           <div class="field">
             <label class="order-label" for="tel"
-              >Контактный номер телефона</label
+            >Контактный номер телефона</label
             >
             <input
-              class="order-input"
-              type="number"
-              id="tel"
-              placeholder="+998 99 999 99 99"
+            name="phone"
+            class="order-input"
+            type="number"
+            id="tel"
+            placeholder="+998 99 999 99 99"
             />
           </div>
+          <button type="submit">Submit</button>
+        </form>
 
-          <h1 class="order-left-title">Вариант доставки/оплаты</h1>
-          <div class="order-options">
-            <h1 class="order-label">Вариант доставки</h1>
-            <select
-              id="select"
-              class="form-select"
-              aria-label="Default select example"
-            >
-              <option selected>Самовывоз</option>
-              <option value="1">Самовывоз</option>
-              <option value="2">Самовывоз</option>
-            </select>
-          </div>
-          <div class="order-options">
-            <h1 class="order-label">Варианты оплаты</h1>
-            <select
-              id="select"
-              class="form-select"
-              aria-label="Default select example"
-            >
-              <option selected>Наличные</option>
-              <option value="1">Наличные</option>
-              <option value="2">Наличные</option>
-            </select>
-          </div>
-          <div class="text-div">
-            <h1 class="order-label">Комментарий к заказу</h1>
-            <textarea
-              class="order-textarea"
-              placeholder="Напишите свой комментарий"
-            ></textarea>
-          </div>
-          <div class="button-div">
-            <a href="#popup"
-              ><button type="button" class="order-btn">
-                Оформить заказ
-              </button></a
-            >
-          </div>
+
+
+
+
+
+
+
         </div>
+          
 
         <div class="bg-modal" id="popup">
           <div class="popup" >
@@ -205,12 +187,9 @@
                 ><button type="button" class="popup-btn">
                   Вернуться в каталог
                 </button></a
-              >
-              <a href="order.html"
-                ><button type="button" class="popup-btns">
+              ><button type="button" class="popup-btns">
                   Перейти в аккаунт
-                </button></a
-              >
+                </button>
             </div>
           </div>
         </div>

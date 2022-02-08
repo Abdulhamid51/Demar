@@ -112,6 +112,7 @@ TOKEN = '5189245732:AAHLRbxCGDZmrZZtUQaEgPWQTcuSS3IACGQ'
 chat_id = 1257603816
 tb = telebot.TeleBot(TOKEN)
 
+
 def order(request):
 	main = request.session['cart']
 	mainCart = MainCart.objects.get(id=main)
@@ -130,4 +131,8 @@ def order(request):
 			message += f"{i}m kvadrat\n"
 		message += f"Jami narxi: {order.cart.all_price} so'm"
 		tb.send_message(chat_id, message)
+	return redirect('/orderview/')
+
+
+def orderView(request):
 	return render(request, 'order.html')
